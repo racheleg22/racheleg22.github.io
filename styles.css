@@ -1,0 +1,368 @@
+
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Bodoni-Moda&display=swap');
+
+body {
+    background-color: #fdf5e6;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.navbar {
+    position: relative;
+    overflow: hidden;
+    background-color: #fdf5e6;
+    font-family: 'Montserrat', sans-serif;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    height: 60px;
+    color: 	black;
+}
+
+.navbar a {
+    float: right;
+    font-size: 16px;
+    color: 	black;
+    text-align: center;
+    margin-top: 16px;
+    padding-left: 14px;
+    padding-right: 14px;
+    text-decoration: none;
+    border-right: 1px solid black;
+}
+
+.navbar a:first-child {
+    border: none;
+    float: left;
+}
+
+.navbar a:hover {
+    color: #B88F8A;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+ul.breadcrumb {
+    list-style: none;
+    font-family: 'Bodoni-Moda', serif;
+    text-align: left; 
+    margin-left: 10%;
+    padding-left: 0;
+}
+ 
+
+ul.breadcrumb li {
+    display: inline;
+    font-size: 16px;
+}
+  
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+  
+  /* Add a color to all links inside the list */
+ul.breadcrumb li a {
+    color: #B88F8A;
+    text-decoration: none;
+}
+  
+  /* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+    color: #B88F8A;
+    text-decoration: underline;
+}
+
+
+.resume_content {
+    display: flex;
+    top: 180;
+    width: 1000px;
+    height: 400px;
+    background-color: #efeada;
+    margin-left: 350px;
+    padding-left: 50px;
+    margin-bottom: 50px;
+}
+
+.resume-left{
+    flex: 1;
+    max-width: 350px;
+    height: 300px;
+    margin-left: 15px;
+    margin-right: 20px;
+    padding-left: 10px;
+    font-size: 4ch;
+    border: 1px solid burlywood;
+}
+
+.resume-right{
+    flex: 1;
+    max-width: 350px;
+    height: 300px;
+    border: 1px solid burlywood;
+    margin-right: 15px;
+    padding-left: 10px;
+}
+
+#wrapper {
+    width: 90%;
+    margin: auto;
+    background-color: #fdf5e6;
+    height: 100%;
+    display: flex;
+    margin-top: 50px;
+}
+
+.sidebar {
+    position: sticky;
+    position: -webkit-sticky;
+    background: #fdf5e6;
+    width: 300px;
+    height: 500px;
+    top: 60px;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    flex: 2;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.sidebar img {
+    height: 1500px;
+    width: 1500px;
+    margin-left: 100px;
+    margin-top: 100px;
+}
+  
+.content {
+    background-color: #fdf5e6;
+    width: 600px;
+    height: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
+    flex: 8;
+    text-align: center;
+}
+
+.bio_img img {
+    height: 290px;
+    width: 475px;
+    flex: 1;
+    opacity: 80%;
+    margin-right: 50px;
+}
+
+.bio_img {
+    border-radius: 50%;
+    zoom: 10%;
+}
+
+.bio_content {
+    height: 290px;
+    width: 475px;
+    flex: 1;
+}
+
+.name{
+    font-weight:600;
+    font-size: 18px;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+.description{
+    font-size: 14px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.bio-links a{
+    font-size: 14px;
+    padding-right: 5px;
+    text-decoration: none;
+    border-right: 1px solid black;
+    color: black;
+}
+
+.bio-links a:hover{
+    color: #B88F8A;
+}
+
+.bio-links a:last-child {
+    border: none;
+}
+
+#title{
+    font-family: 'Bodoni-Moda', serif;
+    font-weight: 500;
+    font-size: 5ch;
+    text-align: left; 
+    margin-left: 10%;
+}
+
+#proj_title a{
+    color: black;
+    font-weight: 600;
+}
+
+#proj_title a:hover{
+    color: #B88F8A;
+    font-weight: 600;
+}
+
+.about-content {
+    display: block;
+    text-align: left;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 50px;
+    line-height: 2em;
+}
+
+#linked-title a{
+    color: black;
+    text-decoration: none;
+}
+
+#linked-title a:hover{
+    color: #B88F8A;
+}
+ 
+/* For the bio page */
+#about {
+    display: inline-block;
+    margin-bottom: 70px;
+    text-align: center;
+}
+
+#about-img{
+    display: inline-block;
+    text-align: center;
+    width: 320;
+}
+
+.caption {
+    display: table-caption;
+    caption-side: bottom;
+    width: 320;
+}
+
+#about-img img {
+    height: 300px;
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#josie-img img {
+    height: 450px;
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#climbing img{
+    height: 450px;
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#magnitude-img img{
+    height: 300px;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+figure {
+    padding: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 70px
+}
+  
+figcaption {
+    color: black;
+    font-style: italic;
+    padding: 2px;
+    text-align: center;
+    font-size: smaller;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    text-align: left;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-bottom: solid 0.5px #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 50px;
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    text-align: left;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.row {
+    background-color: #fdf5e6;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;;
+}
+
+.description-box {
+    width: 100%;
+    background-color: #fdf5e6;
+    box-sizing: border-box;
+    padding: 10px 0 0 10px;
+}
+.column-left {
+    flex: 1;
+    padding: 0 4px;
+}
+
+.column-right {
+    flex: 1;
+    padding: 0 4px;
+}
+  
+.column-left img {
+    width: 100%;
+    margin-top: 8px;
+    vertical-align: middle;
+}
+
+.column-right img {
+    width: 100%;
+    margin-top: 8px;
+    vertical-align: middle;
+}
+
+.column {
+    flex: 25%;
+    padding: 20px 20px 20px 20px;
+}
+
+.column img {
+    width: 100%;
+    margin-top: 8px;
+    vertical-align: middle;
+}
+
+.column img:hover {
+    opacity: 70%;
+    transition: 0.5s ease;
+}
+
+  

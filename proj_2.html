@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8">
+    <title>Rachel Godfrey Portfolio</title>
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="head"><a href="bio.html" aria-label="About Rachel" title="About">Rachel Godfrey</a></div>
+            <a href="Resume_RGodfrey_Aug.pdf" aria-label="Rachel's Resume" title="Resume">Resume</a>
+            <a href="bio.html" aria-label="About Rachel" title="About">About</a>
+            <a href="projects.html" aria-label="Rachels Projects" title="Projects">Projects</a>
+        </div>
+        <div id="wrapper">
+            <div class="sidebar">
+                <img class="bio_img" src="lirachel.png" alt="Photo of Rachel Godfrey. She has brown hair and wears a blue shirt."><br>
+                <div class="name">Rachel Godfrey<br>
+                    <div class="bio-links">
+                        <a href="mailto: rachelgodfrey2023@u.northwestern.edu"  aria-label="Email Rachel" title="Email">Email</a>
+                        <a href="https://www.linkedin.com/in/rachel-godfrey-067450220/" aria-label="Rachels LinkedIn Profile" title="LinkedIn">LinkedIn</a>
+                    </div>
+                </div><br>
+                <div class="description">Research Engineer, Rush University Medical Center</div>
+            </div>
+            <div class="content">
+                <ul class="breadcrumb">
+                    <li><a href="projects.html"  aria-labeled="Return home" title="Home">Home</a></li>
+                    <li>Step Count Project</li>
+                </ul>
+                <div id="title">Utilize Apple Watch to Recreate Step Count Algorithm</div><br>
+                <div id="about">
+                    <h2>Introduction</h2>
+                    <div class="about-content">
+                        Step count is commonly used by consumers as a method of activity tracking day to day. Many wrist worn devices, including the popular Apple Watch offer step counts for the user. For this project we collected a small sample of data to explore methods for step counting and attempt to recreate the apple watches step count algorithm.  
+                    </div>
+                    <h2>Methods</h2>
+                    <div class="about-content">
+                        The Apple watch was placed on three users and several trials were recorded while the participant carried out seven different activities for 15 second intervals. 
+                       <br>
+                       <br>
+                       <b>Recorded Activities</b>
+                        <ul>
+                            <li>Walking</li>
+                            <li>Walking while pushing (a chair on wheels)</li>
+                            <li>Jogging</li>
+                            <li>Running</li>
+                            <li>Stairs - one step at a time </li>
+                            <li>Stairs - two steps at a time </li>
+                            <li>Typing</li>
+                        </ul>
+                        <br>
+                        The data collected from Apple Watch contains many important variables. Activities relevant to step count are periodic movements such as; running, walking, or climbing stairs. This information can be used to develop a step count algorithm based on identifying each step as a cycle in the function. Each cycle will contain a local maximum indicating a step. This could be translated by counting the number of peaks and therefore steps in each trial. 
+                        <br>
+                        <br>
+                        The raw data from the accelerometer in the Apple Watch contained acceleration in the X, Y and Z directions separately. The euclidean norm was calculated for each time stamp to represent the magnitude of acceleration. The magnitude of acceleration versus time is shown below. 
+                        
+                        It is important to note that there are other local maximas that do not indicate steps, and may contribute to errors when step counting if they are too similar in magnitude to the largest peak in each cycle.
+                    </div>
+                    **fix this figure**
+                    <figure id="magnitude-img">
+                        <img src="image5.png" alt="Two plots are shown. On the left three small plots of acceleration singal in the X, Y and Z directions individually. On the right a plot of the magnitude of acceleration">
+                        <figcaption>Plot of magnitude of normalized acceleration vector using euclidean norm</figcaption>
+                    </figure>
+                    <div class="about-content">
+                        A low pass butterworth filter was then used to filter out noise. Peaks were counted on the filtered signal. The threshold for a peak to be counted as a step was defined as the mean of the filtered acceleration signal. Further a distance threshold was defined to prevent peaks being counted in too close of proximity. This algorithm was then applied to each trial and the results were analyzed.
+                    </div>
+                    <h2>Results</h2>
+                    <div class="about-content">
+                        The algorithm varied in performance across activities. The percent error was calculated and provided in table one. The percent error was the lowest for walking and walking while pushing. The largest errors were for typing at 117% and two stair steps with 51.111%. These errors primarily arise from the threshold used from which used the mean value of magnitude to determine a cutoff for a local maxima within a cycle. If this threshold is too low, or not applicable to the activity there will be false positives such as with typing and doing the stairs. If this threshold is too high there would be false negatives. One way to combat this would be to amplify the points of interest, which is not done by our algorithm. For activities such as typing that are misinterpreted as steps, an additional filter would be needed to distinguish activities. Using additional parameters such as the 3D gyroscope may be useful for this. 
+                    </div>
+                    <figure id="chart">
+                        <img src="image4.png" alt="Plot acceleration signal from person walking the singal has a blue line with peaks and valleys indicating increases and decreases in acceleration. Yellow X's on peaks indicate steps. A red dashed line is horizontal across the image to indicate the threshold to count a peak as a step. No peaks fall below the threshold.">
+                        <figcaption>Plot of the most accurate task – walking. There are no false positives or negatives shown on this graph.</figcaption>
+                    </figure>
+                    <figure id="chart">
+                        <img src="image3.png" alt="Plot acceleration signal from person typing the singal has a blue line with peaks and valleys indicating increases and decreases in acceleration. Yellow X's on peaks indicate steps. A red dashed line is horizontal across the image to indicate the threshold to count a peak as a step. No peaks fall below the threshold.">
+                        <figcaption>Plot of the median performing task – running. False negatives are shown by the red circles. There are no false positives.</figcaption>
+                    </figure>
+                    <figure id="chart">
+                        <img src="image2.png" alt="Plot acceleration signal from person running the singal has a blue line with peaks and valleys indicating increases and decreases in acceleration. Yellow X's on peaks indicate steps. A red dashed line is horizontal across the image to indicate the threshold to count a peak as a step. Two peaks fall below the threshold and are marked with a red dot.">
+                        <figcaption>Plot of the worst performing task – typing. Every peak detected (shown by “x”) is a false positive for a step</figcaption>
+                    </figure>
+                    <h2>Analysis</h2>
+                    <div class="about-content">
+                        Primary step activities such as walking, running and jogging have low error rates when assessed individually. However, people perform a large variety of tasks every day, so it is important that the step counter is accurate across several activities. The larger error rates of individual activities such as typing and taking large steps could provide the user a very inaccurate step count. The mean percent error across all seven activities performed was 30.524%. This is twice as large as the industry standard of 15%. This could make a significant difference for someone counting their steps such as to measure health and fitness. A person who spends the majority of their day at a desk with the goal to average 10,000 steps a day could be misled with a count inaccuracy as large as 3,052 steps. This is largely dependent on which activities a person performs on a day to day basis which will vary greatly from person to person. For this reason it would be important to improve on this algorithm to compare to the industry standard. 
+                        <br>
+                        <br>
+                        Our algorithm struggled with determining the difference between actual steps and other small movements with peaks, this was most noticeable with the typing task. The algorithm currently cannot distinguish wrist movement from walking movements and interprets the acceleration from wrist movement, as if the user was moving even if they were not. Another improvement that could be made to our algorithm is a step frequency check. We attempted to prevent too many steps from being counted if they were in close proximity to each other in order to reduce false positives. This would be especially useful in the typing task given that our algorithm detected a large number of “steps” in such a short amount of time. Improving this frequency threshold would yield more accurate results.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    </html>
+    </body>
+    </html>
