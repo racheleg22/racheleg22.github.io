@@ -1,1 +1,73 @@
-
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8">
+    <title>Rachel Godfrey Portfolio</title>
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="head"><a href="bio.html" aria-label="About Rachel" title="About">Rachel Godfrey</a></div>
+            <a href="Resume_RGodfrey.pdf" aria-label="Rachel's Resume" title="Resume">Resume</a>
+            <a href="bio.html" aria-label="About Rachel" title="About">About</a>
+            <a href="index.html" aria-label="Rachels Projects" title="Projects">Projects</a>
+        </div>
+        <div id="wrapper">
+            <div class="sidebar">
+                <img class="bio_img" src="lirachel.png" alt="Photo of Rachel Godfrey. She has brown hair and wears a blue shirt."><br>
+                <div class="name">Rachel Godfrey<br>
+                    <div class="bio-links">
+                        <a href="mailto: rachelgodfrey2023@u.northwestern.edu"  aria-label="Email Rachel" title="Email">Email</a>
+                        <a href="https://www.linkedin.com/in/rachel-godfrey-067450220/" aria-label="Rachels LinkedIn Profile" title="LinkedIn">LinkedIn</a>
+                    </div>
+                </div><br>
+                <div class="description">Research Engineer, Rush University Medical Center</div>
+            </div>
+            <div class="content">
+                <ul class="breadcrumb">
+                    <li><a href="index.html"  aria-labeled="Return home" title="Home">Home</a></li>
+                    <li>Step Count Project</li>
+                </ul>
+                <div id="title">Gene Analysis of Graves Ophthalmology in Response to Dihydroartemisinin (DHA) Treatment</div><br>
+                <div id="about">
+                    <h2>Introduction</h2>
+                    <div class="about-content">
+                        Caused by an overexpression of auto-antibodies, Grave’s disease is a form of orbital hyperthyroidism that produces swelling near the orbital bone cavity and threatens visual function. Through the activation of orbital fibroblast from the auto-antibodies, a cascade of inflammatory mediators produces the over-swelling. Yang et al. proposed dihydroartemisinin (DHA) as a safe antifibrotic treatment for this disease given its inflammatory suppressor characteristic for other diseases. Given this information, we conducted a differential gene expression analysis along with a gene ontology analysis on RNA sequencing samples by Yang et al., and found 89 genes to be significantly expressed (p < 0.05) between control cells, and cells treated with DHA. More specifically, 68 genes were found to be down regulated, all of which were related to the inflammatory response. On the other hand, 21 genes were found to be upregulated, still in association with a reduced inflammatory response. The genes found were in accordance with the results of Yang et al. 
+                    </div>
+                    <h2>Methods</h2>
+                    <div class="about-content">
+                        RNA-sequencing datasets are made available at National Center for Biotechnology Information’s Gene Expression Omnibus (GEO). Our group obtained high-throughput RNA-seq data from NCBI’s GEO database and performed DESeq analysis, followed by GO enrichment analysis in order to understand underlying changes in gene expression due to DHA treatment in GED OF’s. 
+                        <br>
+                        <br>
+                        The workflow is outlined in fig 1. First samples on the GEO database, associated sequencing read archive (SRA) page, and citation were assessed. Our group identified the experimental design and associated samples aligned with the requirements of our desired analysis. 
+                        <br>
+                        <br>
+                        Our analysis consisted of six of the nine available samples from the study conducted by Yang et al.. The six samples used were to simplify our analysis and replicate acquired knowledge from the course. 
+                       <br>
+                       <br>
+                       <b>The samples included were:</b>
+                        <ul>
+                            <li>3 X Stimulated with TGF-β</li>
+                            <li>3 X Stimulated with TGF-β and treated with DHA</li>
+                        </ul>
+                        <br>
+                        The samples were first uploaded to Northwestern’s Quest High Performance Computing Cluster. Quest was then used to map the sequencing reads to the reference genome and calculate gene expression levels. Results were visualized using Integrative Genomics Viewer (IGV). Using R the result of all six samples were concatenated to create a gene expression matrix. The resulting gene expression matrix and a sample annotation file of sample information was used as the input for differential expression analysis. Differential expression analysis was performed using the DESeq R package (Love, Huber, Anders, 2014). Significantly differentially expressed genes were found using the criteria adjusted p-value < 0.05. The results provided 89 differentially expressed genes (21 downregulated, 68 upregulated) were uploaded to DAVID and gene ontology enrichment analysis was performed using Database for Annotation, Visualization and Integrated Discovery (DAVID).
+                        <br>
+                        <br>
+                    </div>
+                    <figure id="magnitude-img">
+                        <img src="image5.png" alt="Work flow is outlined in a flow chart">
+                        <figcaption>Overview of project workflow.</figcaption>
+                    </figure>
+                    <h2>Results</h2>
+                    <h2>Contibutors</h2>
+                    <div class="about-content">
+                        John Carinato, Paola Carrillo Gonzalez, Rachel Godfrey
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    </html>
+    </body>
+    </html>
